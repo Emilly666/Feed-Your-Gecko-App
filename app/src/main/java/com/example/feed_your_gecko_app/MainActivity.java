@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             Objects.requireNonNull(tabLayout.getTabAt(1));
             viewPager2.setCurrentItem(1,false);
         }
-        //context.deleteDatabase("PLANTS_DATABASE.db");
+        //context.deleteDatabase("REPTILES_DATABASE.db");
         AppDatabase db = AppDatabase.getDatabase(context);
 
     }
