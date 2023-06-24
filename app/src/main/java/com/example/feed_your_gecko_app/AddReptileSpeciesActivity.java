@@ -1,6 +1,7 @@
 package com.example.feed_your_gecko_app;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -67,6 +68,9 @@ public class AddReptileSpeciesActivity extends AppCompatActivity {
 
         //setup temperature slider
         temperatureSlider.setValues(0f,50f);
+        temperatureSlider.setTrackActiveTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange_darker)));
+        temperatureSlider.setThumbTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange_darker)));
+        temperatureSlider.setHaloTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange_lighter)));
         temperatureSlider.setTickVisible(false);
         temperatureFrom.setText( String.format(getResources().getString(R.string.temp), 0) );
         temperatureTo.setText( String.format(getResources().getString(R.string.temp), 50) );

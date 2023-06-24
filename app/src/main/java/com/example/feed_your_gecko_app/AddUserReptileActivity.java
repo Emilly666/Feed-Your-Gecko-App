@@ -2,6 +2,7 @@ package com.example.feed_your_gecko_app;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.ArrayAdapter;
@@ -17,6 +18,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.feed_your_gecko_app.database.AppDatabase;
 import com.example.feed_your_gecko_app.database.tables.UserReptile;
 import com.example.feedyourgeckoapp.R;
+import com.google.android.material.color.MaterialColors;
 
 import java.util.List;
 
@@ -85,8 +87,8 @@ public class AddUserReptileActivity extends AppCompatActivity {
     public void setUpAutocomplete(){
         List<String> listDb = db.dao_reptile().getAllReptilesNames();
         String[] arr = listDb.toArray(new String[0]);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(context,android.R.layout.select_dialog_item, arr);
         autocomplete.setThreshold(0);
+        AutocompleteArrayAdapter adapter = new AutocompleteArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, arr);
         autocomplete.setAdapter(adapter);
     }
 

@@ -18,6 +18,6 @@
     </style>
 
     <style name="addButton" parent="@style/Widget.AppCompat.ImageButton">
-        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="backgroundTint">?attr/colorSecondaryVariant</item>
     </style>
 </resources>

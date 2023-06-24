@@ -125,6 +125,9 @@
         android:valueTo="4"
         android:value="2"
         android:stepSize="1"
+        app:thumbColor="@color/orange_darker"
+        app:haloColor="@color/orange_lighter"
+        app:trackColorActive="@color/orange_darker"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/cloudIcon"
@@ -187,6 +190,7 @@
         android:layout_height="wrap_content"
         android:onClick="addPlantSpeciesButtonClicked"
         android:text="@string/add"
+        android:backgroundTint="@color/orange_lighter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/feedingFrequencyPicker" />
@@ -211,6 +215,9 @@
         android:valueTo="100"
         app:haloRadius="16dp"
         app:labelBehavior="gone"
+        app:thumbColor="@color/orange_darker"
+        app:haloColor="@color/orange_lighter"
+        app:trackColorActive="@color/orange_darker"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/humidityLabel" />

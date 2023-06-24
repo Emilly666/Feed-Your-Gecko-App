@@ -2,8 +2,8 @@
     <!--toolbar titles-->
     <string name="app_name">FYG</string>
     <string name="settings">SETTINGS</string>
-    <string name="add_new_species">ADD NEW REPTILE SPECIES</string>
-    <string name="add_new_reptile">ADD NEW REPTILE</string>
+    <string name="add_new_species">ADD REPTILE SPECIES</string>
+    <string name="add_new_reptile">ADD REPTILE</string>
 
     <!--universal-->
     <string name="add">ADD</string>
