@@ -1,0 +1,50 @@
+<resources>
+    <!--toolbar titles-->
+    <string name="app_name">FYG</string>
+    <string name="settings">SETTINGS</string>
+    <string name="add_new_species">ADD NEW REPTILE SPECIES</string>
+    <string name="add_new_reptile">ADD NEW REPTILE</string>
+
+    <!--universal-->
+    <string name="add">ADD</string>
+    <string name="save">SAVE</string>
+
+    <!--settings-->
+    <string name="notifications">NOTIFICATIONS</string>
+    <string name="feed_notifications">Feed notifications</string>
+    <string name="vitamins_notifications">Vitamins notifications</string>
+    <string name="notifications_time">Notifications time</string>
+
+    <!--reptile list item-->
+    <plurals name="feedEvery">
+        <item quantity="one" formatted="true">Feed everyday</item>
+        <item quantity="other" formatted="true">Feed every %1$d days</item>
+    </plurals>
+    <plurals name="vitaminsEvery">
+        <item quantity="one" formatted="true">Vitamins everyday</item>
+        <item quantity="other" formatted="true">Vitamins every %1$d days</item>
+    </plurals>
+    <string name="hum">%1$d\%%</string>
+    <string name="temp">%1$d°C</string>
+    <string name="temp2">From %1$d°C to %2$d°C</string>
+    <string name="reptile_nickname">reptile nickname</string>
+
+    <!--reptile list item popup menu-->
+    <string name="popup_menu_delete">Delete</string>
+
+    <!--add new userReptile-->
+    <string name="add_reptile">Add Reptile</string>
+    <string name="add_a_nickname">Add a nickname</string>
+    <string name="add_species_button">add species</string>
+
+    <!--add new reptile species-->
+    <string name="species_name">Species name</string>
+    <string name="best_temperature_range">Preferable temperature range:</string>
+    <string name="preferable_light">Preferable light:</string>
+    <string name="preferable_humidity">Preferable humidity: %1$d\%%</string>
+    <string name="feeding_frequency_days">Feeding frequency(days)</string>
+    <string name="vitamins_frequency_days">Vitamins frequency(days)</string>
+    <string name="iconlight1">Icon light 1</string>
+    <string name="iconlight5">Icon light 5</string>
+
+</resources>

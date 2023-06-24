@@ -1,0 +1,19 @@
+<resources>
+    <!-- Dark theme -->
+    <style name="Theme.FeedYourGeckoApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/gray_darker</item>
+        <item name="colorPrimaryVariant">@color/gray_lighter</item>
+        <item name="colorOnPrimary">@color/off_black_on_secondary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/orange_darker</item>
+        <item name="colorSecondaryVariant">@color/orange_lighter</item>
+        <item name="colorOnSecondary">@color/off_black_on_primary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/off_black_on_primary</item>
+        <!-- Customize your theme here. -->
+        <item name="android:colorBackground">@color/off_black_on_primary</item>
+        <item name="android:textColorPrimary">@color/off_white</item>
+        <item name="colorControlNormal">@color/off_black_on_secondary</item>
+    </style>
+</resources>

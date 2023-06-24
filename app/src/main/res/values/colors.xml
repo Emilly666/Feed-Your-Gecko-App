@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">@color/off_white</color>
+
+    <color name="off_white">#fff5e8</color>
+    <color name="orange_lighter">#ffa559</color>
+    <color name="orange_darker">#ff6000</color>
+    <color name="gray_lighter">#7d7165</color>
+    <color name="gray_darker">#5b5650</color>
+    <color name="off_black_on_primary">#2a2a2a</color>
+    <color name="off_black_on_secondary">#221c1c</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="supportActionBarColor">?attr/colorPrimary</color>
+
+</resources>
