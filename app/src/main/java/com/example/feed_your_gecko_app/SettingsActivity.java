@@ -17,7 +17,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     TimePicker notificationsTimePicker;
-    SwitchCompat switchWater, switchFertilizer;
+    SwitchCompat switchFeed, switchVitamins;
     Context context;
     SharedPreferencesManager sp;
     @Override
@@ -42,17 +42,17 @@ public class SettingsActivity extends AppCompatActivity {
         notificationsTimePicker.setHour(notificationsTime.getHour());
         notificationsTimePicker.setMinute(notificationsTime.getMinute());
 
-        switchWater = findViewById(R.id.switchFeed);
-        switchFertilizer = findViewById(R.id.switchVitamins);
+        switchFeed = findViewById(R.id.switchFeed);
+        switchVitamins = findViewById(R.id.switchVitamins);
 
-        switchWater.setChecked(sp.getNotificationsWater());
-        switchFertilizer.setChecked(sp.getNotificationsFertilize());
+        switchFeed.setChecked(sp.getNotificationsFeed());
+        switchVitamins.setChecked(sp.getNotificationsVitamins());
     }
     @Override
     public void onBackPressed() {
         sp.setNotificationsTime(LocalTime.of(notificationsTimePicker.getHour(), notificationsTimePicker.getMinute()));
-        sp.setNotificationsWater(switchWater.isChecked());
-        sp.setNotificationsFertilize(switchFertilizer.isChecked());
+        sp.setNotificationsFeed(switchFeed.isChecked());
+        sp.setNotificationsVitamins(switchVitamins.isChecked());
         finish();
     }
 }

@@ -9,8 +9,8 @@ import java.time.temporal.ChronoField;
 public class SharedPreferencesManager {
     private static final String APP_PREFS = "AppPrefsFile";
     private static final Long notificationsTime = LocalTime.of(10,0).getLong(ChronoField.SECOND_OF_DAY);
-    private static final boolean notificationsWater = true;
-    private static final boolean notificationsFertilize = true;
+    private static final boolean notificationsFeed = true;
+    private static final boolean notificationsVitamins = true;
 
     private SharedPreferences sp;
     private static SharedPreferencesManager instance;
@@ -34,21 +34,21 @@ public class SharedPreferencesManager {
         return LocalTime.ofSecondOfDay(sp.getLong("notificationsTime", LocalTime.of(10,0).getLong(ChronoField.SECOND_OF_DAY)));
     }
 
-    public void setNotificationsWater(boolean notificationsWater) {
+    public void setNotificationsFeed(boolean notificationsFeed) {
         SharedPreferences.Editor editor = sp.edit();
-        editor.putBoolean("notificationsWater", notificationsWater);
+        editor.putBoolean("notificationsFeed", notificationsFeed);
         editor.apply();
     }
-    public boolean getNotificationsWater() {
-        return sp.getBoolean("notificationsWater", true);
+    public boolean getNotificationsFeed() {
+        return sp.getBoolean("notificationsFeed", true);
     }
 
-    public void setNotificationsFertilize(boolean notificationsFertilize) {
+    public void setNotificationsVitamins(boolean notificationsVitamins) {
         SharedPreferences.Editor editor = sp.edit();
-        editor.putBoolean("notificationsFertilize", notificationsFertilize);
+        editor.putBoolean("notificationsVitamins", notificationsVitamins);
         editor.apply();
     }
-    public boolean getNotificationsFertilize() {
-        return sp.getBoolean("notificationsFertilize", true);
+    public boolean getNotificationsVitamins() {
+        return sp.getBoolean("notificationsVitamins", true);
     }
 }
