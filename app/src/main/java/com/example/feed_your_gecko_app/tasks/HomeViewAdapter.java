@@ -70,9 +70,9 @@ public class HomeViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         int icon;
         if(mItemList.get(position).getType() == VIEW_TYPE_ITEM_FEED){
-            icon = R.drawable.watering_can_24;
+            icon = R.drawable.baseline_add_24;
         }else{
-            icon = R.drawable.fertilizer_24;
+            icon = R.drawable.baseline_add_24;
         }
 
         viewHolder.button4.setCompoundDrawablesWithIntrinsicBounds(icon, 0, R.drawable.baseline_arrow_drop_down_24, 0);
