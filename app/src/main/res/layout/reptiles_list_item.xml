@@ -28,6 +28,15 @@
 
 
         <TextView
+            android:id="@+id/subsoil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="subsoil"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toBottomOf="@+id/vitamins" />
+
+        <TextView
             android:id="@+id/spiecesName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,10 +57,10 @@
             android:id="@+id/typeIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="?attr/android:textColorPrimary"
             app:layout_constraintBottom_toBottomOf="@+id/typeName"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
-            app:layout_constraintTop_toTopOf="@+id/typeName"
-            android:backgroundTint="?attr/android:textColorPrimary" />
+            app:layout_constraintTop_toTopOf="@+id/typeName" />
 
         <TextView
             android:id="@+id/temperature"
@@ -59,9 +68,19 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginTop="15dp"
-            android:text="temperature"
+            android:text="temperature Day"
             app:layout_constraintStart_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toBottomOf="@+id/spiecesName" />
+
+        <TextView
+            android:id="@+id/temperature2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="15dp"
+            android:text="temperature Night"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toBottomOf="@+id/temperature" />
 
         <ImageView
             android:id="@+id/temperatureIcon"
@@ -70,38 +89,28 @@
             app:layout_constraintBottom_toBottomOf="@+id/temperature"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toTopOf="@+id/temperature"
-            app:srcCompat="@drawable/thermometer_lines"
+            app:srcCompat="@drawable/thermometer_sun"
             app:tint="?attr/android:textColorPrimary" />
 
-        <TextView
-            android:id="@+id/light"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="15dp"
-            android:text="light"
-            app:layout_constraintStart_toStartOf="@+id/guideline6"
-            app:layout_constraintTop_toBottomOf="@+id/temperature" />
-
         <ImageView
-            android:id="@+id/lightIcon"
+            android:id="@+id/temperatureIcon3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/light"
+            app:layout_constraintBottom_toBottomOf="@+id/temperature2"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
-            app:layout_constraintTop_toTopOf="@+id/light"
-            app:srcCompat="@drawable/baseline_wb_sunny_24"
-            app:tint="?attr/android:textColorPrimary"/>
+            app:layout_constraintTop_toTopOf="@+id/temperature2"
+            app:srcCompat="@drawable/thermometer_moon"
+            app:tint="?attr/android:textColorPrimary" />
 
         <TextView
             android:id="@+id/humidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="15dp"
             android:text="humidity"
+            android:layout_marginTop="15dp"
             app:layout_constraintStart_toStartOf="@+id/guideline6"
-            app:layout_constraintTop_toBottomOf="@+id/light" />
+            app:layout_constraintTop_toBottomOf="@+id/temperature2" />
 
         <TextView
             android:id="@+id/feedingFrequency"
@@ -131,8 +140,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toTopOf="@+id/humidity"
             app:srcCompat="@drawable/water_percent"
-            app:tint="?attr/android:textColorPrimary"/>
-
+            app:tint="?attr/android:textColorPrimary" />
 
 
         <ImageView
@@ -143,7 +151,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toTopOf="@+id/feedingFrequency"
             app:srcCompat="@drawable/fertilizer_24"
-            app:tint="?attr/android:textColorPrimary"/>
+            app:tint="?attr/android:textColorPrimary" />
 
         <ImageView
 
@@ -154,7 +162,19 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toTopOf="@+id/vitamins"
             app:srcCompat="@drawable/watering_can_24"
-            app:tint="?attr/android:textColorPrimary"/>
+            app:tint="?attr/android:textColorPrimary" />
+
+        <ImageView
+
+            android:id="@+id/vitaminsIcon2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/subsoil"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toTopOf="@+id/subsoil"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/baseline_edit_24"
+            app:tint="?attr/android:textColorPrimary" />
 
         <ImageButton
             android:id="@+id/vertMenu"
@@ -164,7 +184,7 @@
             android:src="@drawable/baseline_more_vert_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="?attr/android:textColorPrimary"/>
+            app:tint="?attr/android:textColorPrimary" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

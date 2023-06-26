@@ -17,12 +17,12 @@
 
     <!--reptile list item-->
     <plurals name="feedEvery">
-        <item quantity="one" formatted="true">Feed everyday</item>
-        <item quantity="other" formatted="true">Feed every %1$d days</item>
+        <item quantity="one" formatted="true">Feed everyday, with %2$s</item>
+        <item quantity="other" formatted="true">Feed every %1$d days, with %2$s</item>
     </plurals>
     <plurals name="vitaminsEvery">
-        <item quantity="one" formatted="true">Vitamins everyday</item>
-        <item quantity="other" formatted="true">Vitamins every %1$d days</item>
+        <item quantity="one" formatted="true">Vitamins everyday, with %2$s</item>
+        <item quantity="other" formatted="true">Vitamins every %1$d days, with %2$s</item>
     </plurals>
     <string name="hum">%1$d\%%</string>
     <string name="temp">%1$d°C</string>
@@ -39,12 +39,13 @@
 
     <!--add new reptile species-->
     <string name="species_name">Species name</string>
-    <string name="best_temperature_range">Preferable temperature range:</string>
-    <string name="preferable_light">Preferable light:</string>
+    <string name="best_temperature_range_day">Preferable day\'s temperature range:</string>
+    <string name="best_temperature_range_night">Preferable night\'s temperature range:</string>
     <string name="preferable_humidity">Preferable humidity: %1$d\%%</string>
     <string name="feeding_frequency_days">Feeding frequency(days)</string>
     <string name="vitamins_frequency_days">Vitamins frequency(days)</string>
-    <string name="iconlight1">Icon light 1</string>
-    <string name="iconlight5">Icon light 5</string>
+    <string name="vitamins_type">Vitamins type</string>
+    <string name="feeding_type">Food type</string>
+    <string name="subsoil_description">Subsoil description</string>
 
 </resources>

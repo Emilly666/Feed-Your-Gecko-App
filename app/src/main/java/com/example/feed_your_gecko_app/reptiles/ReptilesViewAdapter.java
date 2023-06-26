@@ -74,19 +74,20 @@ public class ReptilesViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
         Button buttonReptileItem;
         ConstraintLayout reptileDescription;
-        TextView reptileName, temperature, light, humidity, vitamins, feedingFrequency;
-        ImageView typeIcon, vertMenu;
+        TextView reptileName, temperatureDay, temperatureNight, light, humidity, vitamins, feedingFrequency, subsoil;
+        ImageView vertMenu;
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             buttonReptileItem = itemView.findViewById(R.id.buttonReptileItem);
             reptileDescription = itemView.findViewById(R.id.reptileDescription);
             reptileName = itemView.findViewById(R.id.spiecesName);
-            temperature = itemView.findViewById(R.id.temperature);
-            light = itemView.findViewById(R.id.light);
+            temperatureDay = itemView.findViewById(R.id.temperature);
+            temperatureNight = itemView.findViewById(R.id.temperature2);
             humidity = itemView.findViewById(R.id.humidity);;
             vitamins = itemView.findViewById(R.id.vitamins);
             feedingFrequency = itemView.findViewById(R.id.feedingFrequency);
             vertMenu = itemView.findViewById(R.id.vertMenu);
+            subsoil = itemView.findViewById(R.id.subsoil);
         }
     }
     public static class AddButtonViewHolder extends RecyclerView.ViewHolder {
@@ -116,18 +117,23 @@ public class ReptilesViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         viewHolder.buttonReptileItem.setText(userReptile.userReptile.reptileNickname);
         viewHolder.reptileName.setText(userReptile.reptile.reptileName);
-        viewHolder.light.setText(userReptile.reptile.light);
 
         viewHolder.humidity.setText( String.format(context.getString(R.string.hum), userReptile.reptile.humidity) );
-        if(userReptile.reptile.temperatureFrom == userReptile.reptile.temperatureTo){
-            viewHolder.temperature.setText( String.format(context.getString(R.string.temp), userReptile.reptile.temperatureFrom) );
+        if(userReptile.reptile.temperatureFromDay == userReptile.reptile.temperatureToDay){
+            viewHolder.temperatureDay.setText( String.format(context.getString(R.string.temp), userReptile.reptile.temperatureFromDay) );
         }
         else{
-            viewHolder.temperature.setText( String.format(context.getString(R.string.temp2), userReptile.reptile.temperatureFrom, userReptile.reptile.temperatureTo) );
+            viewHolder.temperatureDay.setText( String.format(context.getString(R.string.temp2), userReptile.reptile.temperatureFromDay, userReptile.reptile.temperatureToDay) );
         }
-        viewHolder.vitamins.setText( String.format(context.getResources().getQuantityString(R.plurals.vitaminsEvery, userReptile.reptile.vitaminsFrequency, userReptile.reptile.vitaminsFrequency)) );
-        viewHolder.feedingFrequency.setText( String.format(context.getResources().getQuantityString(R.plurals.feedEvery, userReptile.reptile.feedingFrequency, userReptile.reptile.feedingFrequency)) );
-
+        if(userReptile.reptile.temperatureFromNight == userReptile.reptile.temperatureToNight){
+            viewHolder.temperatureNight.setText( String.format(context.getString(R.string.temp), userReptile.reptile.temperatureFromNight) );
+        }
+        else{
+            viewHolder.temperatureNight.setText( String.format(context.getString(R.string.temp2), userReptile.reptile.temperatureFromNight, userReptile.reptile.temperatureToNight) );
+        }
+        viewHolder.vitamins.setText( String.format(context.getResources().getQuantityString(R.plurals.vitaminsEvery, userReptile.reptile.vitaminsFrequency, userReptile.reptile.vitaminsFrequency, userReptile.reptile.vitaminsType)) );
+        viewHolder.feedingFrequency.setText( String.format(context.getResources().getQuantityString(R.plurals.feedEvery, userReptile.reptile.feedingFrequency, userReptile.reptile.feedingFrequency, userReptile.reptile.feedingType)) );
+        viewHolder.subsoil.setText(userReptile.reptile.subsoil);
         viewHolder.vertMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

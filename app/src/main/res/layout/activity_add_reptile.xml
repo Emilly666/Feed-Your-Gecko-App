@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".AddReptileSpeciesActivity">
 
+    <TextView
+        android:id="@+id/temperatureFromNight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/temp"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -37,19 +45,33 @@
         app:layout_constraintGuide_begin="40dp" />
 
     <com.google.android.material.slider.RangeSlider
-        android:id="@+id/temperatureSlider"
+        android:id="@+id/temperatureSliderDay"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/best_temperature_range"
+        android:contentDescription="@string/best_temperature_range_day"
         android:stepSize="1.0"
         android:valueFrom="0"
         android:valueTo="50"
-        app:labelBehavior="gone"
         app:haloRadius="15dp"
+        app:labelBehavior="gone"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/temperatureFrom"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/temperatureFromDay" />
+
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/temperatureSliderNight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/best_temperature_range_night"
+        android:stepSize="1.0"
+        android:valueFrom="0"
+        android:valueTo="50"
+        app:haloRadius="15dp"
+        app:labelBehavior="gone"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureFromNight" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
@@ -63,14 +85,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/best_temperature_range"
+        android:text="@string/best_temperature_range_day"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintHorizontal_bias="0.342"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toBottomOf="@+id/speciesName" />
 
     <TextView
-        android:id="@+id/temperatureFrom"
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/best_temperature_range_night"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintHorizontal_bias="0.395"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureSliderDay" />
+
+    <TextView
+        android:id="@+id/temperatureFromDay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/temp"
@@ -78,7 +111,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
-        android:id="@+id/temperatureTo"
+        android:id="@+id/temperatureToDay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/temp"
@@ -86,52 +119,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
-        android:id="@+id/lightLabel"
+        android:id="@+id/temperatureToNight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/preferable_light"
+        android:text="@string/temp"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/temperatureSlider" />
-
-    <ImageView
-        android:id="@+id/sunIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="-3dp"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/lightLabel"
-        app:srcCompat="@drawable/baseline_cloud_24"
-        android:contentDescription="@string/iconlight1"/>
-
-    <ImageView
-        android:id="@+id/cloudIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-3dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toBottomOf="@+id/lightLabel"
-        app:srcCompat="@drawable/baseline_wb_sunny_24"
-        android:contentDescription="@string/iconlight5"/>
-
-    <com.google.android.material.slider.Slider
-        app:haloRadius="16dp"
-        android:id="@+id/lightSlider"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:valueFrom="0"
-        android:valueTo="4"
-        android:value="2"
-        android:stepSize="1"
-        app:thumbColor="@color/orange_darker"
-        app:haloColor="@color/orange_lighter"
-        app:trackColorActive="@color/orange_darker"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/cloudIcon"
-        app:labelBehavior="gone"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <com.example.feed_your_gecko_app.VerticalTextView
         android:id="@+id/verticalTextView"
@@ -188,12 +181,11 @@
         android:id="@+id/addReptileSpeciesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange_lighter"
         android:onClick="addPlantSpeciesButtonClicked"
         android:text="@string/add"
-        android:backgroundTint="@color/orange_lighter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toBottomOf="@+id/feedingFrequencyPicker" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline7" />
 
     <TextView
         android:id="@+id/humidityLabel"
@@ -202,7 +194,7 @@
         android:text="@string/preferable_humidity"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/lightSlider" />
+        app:layout_constraintTop_toBottomOf="@+id/temperatureSliderNight" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/humiditySlider"
@@ -213,13 +205,46 @@
         android:value="50"
         android:valueFrom="0"
         android:valueTo="100"
+        app:haloColor="@color/orange_lighter"
         app:haloRadius="16dp"
         app:labelBehavior="gone"
-        app:thumbColor="@color/orange_darker"
-        app:haloColor="@color/orange_lighter"
-        app:trackColorActive="@color/orange_darker"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/humidityLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/humidityLabel"
+        app:thumbColor="@color/orange_darker"
+        app:trackColorActive="@color/orange_darker" />
+
+    <EditText
+        android:id="@+id/vitaminsType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/vitamins_type"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/verticalTextView" />
+
+    <EditText
+        android:id="@+id/feedingType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/feeding_type"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/vitaminsType" />
+
+    <EditText
+        android:id="@+id/subsoil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/subsoil_description"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toBottomOf="@+id/feedingType" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

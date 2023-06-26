@@ -29,7 +29,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.settings);
-        toolbar.setNavigationIcon(R.drawable.logofyg);
+        toolbar.setNavigationIcon(R.drawable.fyglogo);
         setSupportActionBar(toolbar);
 
         notificationsTimePicker = findViewById(R.id.notificationsTimePicker);

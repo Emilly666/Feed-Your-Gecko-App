@@ -25,7 +25,7 @@ public abstract class AppDatabase extends RoomDatabase {
         if(INSTANCE == null){
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "REPTILES_DATABASE.db")
                     .allowMainThreadQueries()
-                    .createFromAsset("REPTILES_DATABASE.db")
+                    //.createFromAsset("REPTILES_DATABASE.db")
                     .build();
         }
         return INSTANCE;

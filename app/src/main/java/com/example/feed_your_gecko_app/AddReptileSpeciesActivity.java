@@ -23,12 +23,12 @@ import java.util.List;
 
 public class AddReptileSpeciesActivity extends AppCompatActivity {
 
-    EditText speciesName;
+    EditText speciesName, vitaminsType, feedingType, subsoil;
     Toolbar toolbar;
     NumberPicker feedingPicker, vitaminsPicker;
-    RangeSlider temperatureSlider;
-    Slider lightSlider, humiditySlider;
-    TextView temperatureFrom, temperatureTo, humidityLabel;
+    RangeSlider temperatureSliderDay, temperatureSliderNight;
+    Slider humiditySlider;
+    TextView temperatureFromDay, temperatureToDay, temperatureFromNight, temperatureToNight, humidityLabel;
     Button addPlantSpeciesButton;
 
     Context context;
@@ -44,19 +44,24 @@ public class AddReptileSpeciesActivity extends AppCompatActivity {
 
         speciesName = findViewById(R.id.speciesName);
         toolbar = findViewById(R.id.toolbar);
-        temperatureSlider = findViewById(R.id.temperatureSlider);
-        temperatureFrom = findViewById(R.id.temperatureFrom);
-        temperatureTo = findViewById(R.id.temperatureTo);
+        temperatureSliderDay = findViewById(R.id.temperatureSliderDay);
+        temperatureSliderNight = findViewById(R.id.temperatureSliderNight);
+        temperatureFromDay = findViewById(R.id.temperatureFromDay);
+        temperatureToDay = findViewById(R.id.temperatureToDay);
+        temperatureFromNight = findViewById(R.id.temperatureFromNight);
+        temperatureToNight = findViewById(R.id.temperatureToNight);
         feedingPicker = findViewById(R.id.waterFrequencyPicker);
         vitaminsPicker = findViewById(R.id.feedingFrequencyPicker);
         addPlantSpeciesButton = findViewById(R.id.addReptileSpeciesButton);
-        lightSlider = findViewById(R.id.lightSlider);
         humidityLabel = findViewById(R.id.humidityLabel);
         humiditySlider = findViewById(R.id.humiditySlider);
+        feedingType = findViewById(R.id.feedingType);
+        vitaminsType = findViewById(R.id.vitaminsType);
+        subsoil = findViewById(R.id.subsoil);
 
         //setup toolbar
         toolbar.setTitle(R.string.add_new_species);
-        toolbar.setNavigationIcon(R.drawable.logofyg);
+        toolbar.setNavigationIcon(R.drawable.fyglogo);
         toolbar.setTitle(R.string.add_new_species);
         setSupportActionBar(toolbar);
 
@@ -66,17 +71,30 @@ public class AddReptileSpeciesActivity extends AppCompatActivity {
             speciesName.setText(b.getString("speciesName"));
         }
 
-        //setup temperature slider
-        temperatureSlider.setValues(0f,50f);
-        temperatureSlider.setTrackActiveTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange_darker)));
-        temperatureSlider.setThumbTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange_darker)));
-        temperatureSlider.setHaloTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange_lighter)));
-        temperatureSlider.setTickVisible(false);
-        temperatureFrom.setText( String.format(getResources().getString(R.string.temp), 0) );
-        temperatureTo.setText( String.format(getResources().getString(R.string.temp), 50) );
-        temperatureSlider.addOnChangeListener((slider, value, fromUser) -> {
-            temperatureFrom.setText( String.format(getResources().getString(R.string.temp), Math.round(slider.getValues().get(0))) );
-            temperatureTo.setText( String.format(getResources().getString(R.string.temp), Math.round(slider.getValues().get(1))) );
+        //setup temperature slider day
+        temperatureSliderDay.setValues(0f,50f);
+        temperatureSliderDay.setTrackActiveTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange_darker)));
+        temperatureSliderDay.setThumbTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange_darker)));
+        temperatureSliderDay.setHaloTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange_lighter)));
+        temperatureSliderDay.setTickVisible(false);
+        temperatureFromDay.setText( String.format(getResources().getString(R.string.temp), 0) );
+        temperatureToDay.setText( String.format(getResources().getString(R.string.temp), 50) );
+        temperatureSliderDay.addOnChangeListener((slider, value, fromUser) -> {
+            temperatureFromDay.setText( String.format(getResources().getString(R.string.temp), Math.round(slider.getValues().get(0))) );
+            temperatureToDay.setText( String.format(getResources().getString(R.string.temp), Math.round(slider.getValues().get(1))) );
+        });
+
+        //setup temperature slider night
+        temperatureSliderNight.setValues(0f,50f);
+        temperatureSliderNight.setTrackActiveTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange_darker)));
+        temperatureSliderNight.setThumbTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange_darker)));
+        temperatureSliderNight.setHaloTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange_lighter)));
+        temperatureSliderNight.setTickVisible(false);
+        temperatureFromNight.setText( String.format(getResources().getString(R.string.temp), 0) );
+        temperatureToNight.setText( String.format(getResources().getString(R.string.temp), 50) );
+        temperatureSliderNight.addOnChangeListener((slider, value, fromUser) -> {
+            temperatureFromNight.setText( String.format(getResources().getString(R.string.temp), Math.round(slider.getValues().get(0))) );
+            temperatureToNight.setText( String.format(getResources().getString(R.string.temp), Math.round(slider.getValues().get(1))) );
         });
 
         //setup humidity slider
@@ -96,6 +114,9 @@ public class AddReptileSpeciesActivity extends AppCompatActivity {
 
     public void addPlantSpeciesButtonClicked(View view) {
         String str = speciesName.getText().toString();
+        String str2 = feedingType.getText().toString();
+        String str3 = vitaminsType.getText().toString();
+        String str4 = subsoil.getText().toString();
         if ( str.isEmpty() ){
             Toast.makeText(context, "Enter species name!", Toast.LENGTH_SHORT).show();
             return;
@@ -104,39 +125,49 @@ public class AddReptileSpeciesActivity extends AppCompatActivity {
             Toast.makeText(context, "Incorrect species name!", Toast.LENGTH_SHORT).show();
             return;
         }
+        if ( str2.isEmpty() ){
+            Toast.makeText(context, "Enter food type!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if ( (str2.startsWith(" ") || str2.endsWith(" ")) ){
+            Toast.makeText(context, "Incorrect food type!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if ( str3.isEmpty() ){
+            Toast.makeText(context, "Enter vitamins type!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if ( (str3.startsWith(" ") || str3.endsWith(" ")) ){
+            Toast.makeText(context, "Incorrect vitamins type!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if ( str4.isEmpty() ){
+            Toast.makeText(context, "Enter subsoil description!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if ( (str4.startsWith(" ") || str4.endsWith(" ")) ){
+            Toast.makeText(context, "Incorrect subsoil description!", Toast.LENGTH_SHORT).show();
+            return;
+        }
         List<String> plantList =  db.dao_reptile().getAllReptilesNames();
         plantList.replaceAll(String::toLowerCase);
         if( plantList.contains(str.toLowerCase()) ){
-            Toast.makeText(context, "That plant species already exist in database!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "That reptile species already exist in database!", Toast.LENGTH_SHORT).show();
             return;
-        }
-
-        String light;
-        switch( Math.round(lightSlider.getValue())  ) {
-            case 0:
-                light = "some light 1";
-                break;
-            case 1:
-                light = "some light 2";
-                break;
-            case 3:
-                light = "some light 4";
-                break;
-            case 4:
-                light = "some light 5";
-                break;
-            default: //default position of seekBar
-                light = "some light 3";
         }
 
         Reptile newReptile = new Reptile(
                     speciesName.getText().toString(),
-                    Math.round(temperatureSlider.getValues().get(0)),
-                    Math.round(temperatureSlider.getValues().get(1)),
-                    light,
+                    Math.round(temperatureSliderDay.getValues().get(0)),
+                    Math.round(temperatureSliderDay.getValues().get(1)),
+                    Math.round(temperatureSliderNight.getValues().get(0)),
+                    Math.round(temperatureSliderNight.getValues().get(1)),
                     Math.round(humiditySlider.getValue()),
                     feedingPicker.getValue(),
-                    vitaminsPicker.getValue()
+                    vitaminsPicker.getValue(),
+                    feedingType.getText().toString(),
+                    vitaminsType.getText().toString(),
+                    subsoil.getText().toString()
                 );
         db.dao_reptile().insertReptile(newReptile);
         this.finish();

@@ -10,20 +10,28 @@ public class Reptile {
     public long reptile_id;
 
     public String reptileName;
-    public int temperatureFrom;
-    public int temperatureTo;
-    public String light;
+    public int temperatureFromDay;
+    public int temperatureToDay;
+    public int temperatureFromNight;
+    public int temperatureToNight;
     public int humidity;
     public int feedingFrequency;
+    public String feedingType;
     public int vitaminsFrequency;
+    public String vitaminsType;
+    public String subsoil;
 
-    public Reptile( String reptileName, int temperatureFrom, int temperatureTo, String light, int humidity, int feedingFrequency, int vitaminsFrequency){
+    public Reptile( String reptileName, int temperatureFromDay, int temperatureToDay, int temperatureFromNight, int temperatureToNight, int humidity, int feedingFrequency, int vitaminsFrequency, String feedingType, String vitaminsType, String subsoil){
         this.reptileName = reptileName;
-        this.temperatureFrom = temperatureFrom;
-        this.temperatureTo = temperatureTo;
-        this.light = light;
+        this.temperatureFromDay = temperatureFromDay;
+        this.temperatureToDay = temperatureToDay;
         this.humidity = humidity;
         this.feedingFrequency = feedingFrequency;
         this.vitaminsFrequency = vitaminsFrequency;
+        this.feedingType = feedingType;
+        this.vitaminsType = vitaminsType;
+        this.subsoil = subsoil;
+        this.temperatureFromNight = temperatureFromNight;
+        this.temperatureToNight = temperatureToNight;
     }
 }

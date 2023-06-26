@@ -39,7 +39,7 @@ public class AddUserReptileActivity extends AppCompatActivity {
         //setup toolbar
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.add_new_species);
-        toolbar.setNavigationIcon(R.drawable.logofyg);
+        toolbar.setNavigationIcon(R.drawable.fyglogo);
         toolbar.setTitle(R.string.add_new_reptile);
         setSupportActionBar(toolbar);
 
